@@ -1,12 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>My First Webpage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zencon Build - Builders & Interior Designers</title>
+
+  <link rel="preload" href="./assets/fonts/Recursive-VariableFont.woff2" as="font" type="font/woff2" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/index.css" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="./script/main.js"></script>
+  <script defer src="./script/index.js"></script>
 </head>
+
 <body>
-   <h1>Hello World</h1>
-   <p>Welcome to my website!</p>
+  <!-- Navigation -->
+  <header class="top-header">
+    <nav class="nav-container">
+      <a class="logo" href="./index.html"><img src="./images/logo.svg" alt="Zencon Build"> Zencon Build</a>
+
+      <!-- Menu Toggle with Lucide Icons -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i data-lucide="menu" class="menu-icon"></i>
+        <i data-lucide="x" class="close-icon"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <!-- User Welcome (Mobile Only - Shows at top when authenticated) -->
+        <li class="user-welcome" id="userWelcome">
+          <div class="user-welcome-content">
+            <span class="welcome-text">Welcome,</span>
+            <span class="user-name-display" id="userNameMobile"></span>
+          </div>
+        </li>
+
+        <!-- Navigation Links -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#contact">Consultation</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <!-- <li><a href="./products.html">Products</a></li> -->
+        <li><a href="#process">Services</a></li>
+
+        <!-- Theme Toggle -->
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i data-lucide="moon" class="theme-icon moon-icon" id="moonIcon"></i>
+            <i data-lucide="sun" class="theme-icon sun-icon" id="sunIcon"></i>
+            <span class="theme-text" id="themeText">Dark Mode</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Building Dreams, Designing Spaces</h1>
+      <p>
+        At Zencon Build, we bring your vision to life — from construction
+        to interiors. Expert builders and designers working together to
+        create spaces that are built to last and styled to inspire.
+      </p>
+      <div class="btn-group">
+        <a href="#contact" class="btn btn-primary">
+          Start Your Project
+          <i data-lucide="arrow-right" class="lucide"></i>
+        </a>
+        <a href="#projects" class="btn btn-outline"> View Our Work </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Us</h2>
+        <p>Your trusted partner for construction and interior design solutions</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="./images/about.jpg" alt="Zencon Build - Construction & Interiors" />
+        </div>
+
+        <div class="about-text">
+          <h3>From Foundation to Finish</h3>
+          <p>
+            At Zencon Build, we offer end-to-end solutions for your dream home and commercial spaces.
+            From solid construction foundations to stunning interior finishes,
+            our expert team handles every detail. Whether you're building new
+            or renovating, we deliver quality craftsmanship and elegant design.
+          </p>
+
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>Explore our construction and interior design portfolio</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 - Cozy Bedroom -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./images/project-1.jpg" alt="Cozy Bedroom" />
+          </div>
+          <div class="project-content">
+            <h3>Cozy Bedroom</h3>
+            <p class="project-meta">Cozy • Bedroom • Panchkula</p>
+          </div>
+        </div>
+
+        <!-- Project 2 - Modern Kitchen -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./images/project-2.jpg" alt="Modern Kitchen Interior" />
+          </div>
+          <div class="project-content">
+            <h3>Modern Kitchen Interior</h3>
+            <p class="project-meta">Modern • Kitchen • Mohali</p>
+          </div>
+        </div>
+
+        <!-- Project 3 - Contemporary Villa -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="./images/project-3.jpg" alt="Contemporary Villa Facade" />
+          </div>
+          <div class="project-content">
+            <h3>Contemporary Villa Facade</h3>
+            <p class="project-meta">Contemporary • Villa • Chandigarh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Process</h2>
+        <p>A seamless journey from concept to completion</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-icon">
+            <i data-lucide="messages-square"></i>
+          </div>
+          <h3>Consultation</h3>
+          <p>We listen to your ideas, needs, and vision for your space</p>
+        </div>
+        <div class="process-step">
+          <div class="process-icon">
+            <i data-lucide="pencil-ruler"></i>
+          </div>
+          <h3>Design</h3>
+          <p>Our team creates detailed plans and 3D renderings</p>
+        </div>
+        <div class="process-step">
+          <div class="process-icon">
+            <i data-lucide="clipboard-check"></i>
+          </div>
+          <h3>Approval</h3>
+          <p>Review and refine until the design is perfect</p>
+        </div>
+        <div class="process-step">
+          <div class="process-icon">
+            <i data-lucide="hammer"></i>
+          </div>
+          <h3>Execution</h3>
+          <p>We bring your vision to life with expert craftsmanship</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Real stories from clients who trusted Zencon Build</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+          </div>
+          <p class="testimonial-text">
+            "Zencon Build constructed and designed our home from scratch. The
+            quality of construction and interior finishes exceeded our expectations.
+            A truly professional team that understood our vision."
+          </p>
+          <div class="testimonial-author">
+            <img src="./images/virender.jpg" alt="Virender Kumar" class="author-image" />
+            <div class="author-info">
+              <h4>Virender Kumar</h4>
+              <p>Homeowner, Panchkula</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+          </div>
+          <p class="testimonial-text">
+            "Zencon Build renovated our commercial space completely. From
+            structural changes to interior design, they handled everything."
+          </p>
+          <div class="testimonial-author">
+            <img src="./images/harpreet.jpg" alt="Harpreet Singh" class="author-image" />
+            <div class="author-info">
+              <h4>Harpreet Singh</h4>
+              <p>Office Owner, Chandigarh</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+            <i data-lucide="star" fill="#fbbf24"></i>
+          </div>
+          <p class="testimonial-text">
+            "The Zencon Build team built our 2BHK from ground up and designed
+            the interiors beautifully. Their attention to both structural quality
+            and aesthetic details is remarkable. Highly recommend!"
+          </p>
+          <div class="testimonial-author">
+            <img src="./images/vishal.jpg" alt="Vishal and Neha Thakur" class="author-image" />
+            <div class="author-info">
+              <h4>Vishal and Neha Thakur</h4>
+              <p>Couple, Mohali</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Let's Build Your Dream Project</h2>
+        <p>
+          Ready to build or renovate? Reach out and let's discuss your
+          construction and interior design needs
+        </p>
+      </div>
+      <div class="contact-grid">
+        <!-- Phone Card -->
+        <a href="tel:+919815849815" class="contact-item">
+          <div class="contact-item-icon">
+            <i data-lucide="phone"></i>
+          </div>
+          <h4>Call Us</h4>
+          <p>+91 9815 84 9815</p>
+        </a>
+
+        <!-- Email Card -->
+        <a href="mailto:in.zencon@gmail.com" class="contact-item">
+          <div class="contact-item-icon">
+            <i data-lucide="mail"></i>
+          </div>
+          <h4>Email Us</h4>
+          <p>in.zencon@gmail.com</p>
+        </a>
+
+        <!-- Location Card -->
+        <a href="https://maps.app.goo.gl/y1ksVsHRzRjRjXAH7" target="_blank" rel="noopener noreferrer"
+          class="contact-item">
+          <div class="contact-item-icon">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <h4>Visit Us</h4>
+          <p>Zencon Build, Plot No. 151, Industrial Area, Phase-II, Chandigarh 160002, India</p>
+        </a>
+      </div>
+      <div class="contact-cta">
+        <!-- <a href="./booking.html" class="btn btn-primary">Schedule a Consultation</a> -->
+        <a href="https://wa.me/919815849815" class="btn btn-primary">Send Us a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Zencon Build</h3>
+        <p>
+          Building quality structures and designing inspiring interiors since 2015.
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/zenconbuild/" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/zenconbuild/" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="https://x.com/zenconbuild" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/@zenconbuild" aria-label="YouTube">
+            <i data-lucide="youtube"></i>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./booking.html">Schedule Consultation</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./wishlist.html">Products Wishlist</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./feedback.html">Share Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li>
+            <a href="./services.html#personalized-design">Personalized Design</a>
+          </li>
+          <li><a href="./services.html#wall-painting">Wall Painting</a></li>
+          <li>
+            <a href="./services.html#furniture-design">Custom Furniture</a>
+          </li>
+          <li>
+            <a href="./services.html#lighting-decor">Lighting & Décor</a>
+          </li>
+          <li>
+            <a href="./services.html#modular-kitchen">Modular Kitchen</a>
+          </li>
+          <li><a href="./services.html#space-planning">Space Planning</a></li>
+        </ul>
+      </div> -->
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe for design tips and inspiration</p>
+        <form class="newsletter-form">
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Zencon Build. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
 </body>
+
 </html>

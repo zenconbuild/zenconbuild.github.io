@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - DreamSpace Interiors</title>
+    <link
+      rel="preload"
+      href="./assets/fonts/Inter-VariableFont.woff2"
+      as="font"
+      type="font/woff2"
+    />
+    <link
+      href="./assets/fonts/PlaywriteUSModern.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+    />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="./script/main.js"></script>
+    <script defer src="./script/login.js"></script>
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <h1>Welcome Back</h1>
+            <p>Sign in to your account to continue</p>
+          </div>
+
+          <form class="auth-form" id="loginForm">
+            <div class="form-field">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+              />
+              <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="password">Password</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="••••••••"
+                  required
+                  autocomplete="current-password"
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  id="togglePassword"
+                  aria-label="Toggle password visibility"
+                >
+                  <i data-lucide="eye" id="eyeIcon"></i>
+                  <i
+                    data-lucide="eye-off"
+                    id="eyeOffIcon"
+                    style="display: none"
+                  ></i>
+                </button>
+              </div>
+              <span class="error-message" id="passwordError"></span>
+            </div>
+
+            <div class="form-options">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="remember" name="remember" />
+                <label for="remember">Remember me</label>
+              </div>
+              <a href="#" class="forgot-link">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn-auth primary" id="loginBtn">
+              Sign In
+              <i data-lucide="log-in"></i>
+            </button>
+          </form>
+
+          <div class="auth-footer">
+            Don't have an account?
+            <a href="./sign-up.html">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+ 
+  </body>
+</html>

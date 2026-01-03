@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Zencon Build</title>
+  <link rel="preload" href="./assets/fonts/Recursive-VariableFont.woff2" as="font" type="font/woff2" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="./script/main.js"></script>
+  <script defer src="./script/projects.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="top-header">
+    <nav class="nav-container">
+      <a class="logo" href="./index.html"><img src="./images/logo.svg" alt="Zencon Build"> Zencon Build</a>
+
+      <!-- Menu Toggle with Lucide Icons -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i data-lucide="menu" class="menu-icon"></i>
+        <i data-lucide="x" class="close-icon"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <!-- User Welcome (Mobile Only - Shows at top when authenticated) -->
+        <li class="user-welcome" id="userWelcome">
+          <div class="user-welcome-content">
+            <span class="welcome-text">Welcome,</span>
+            <span class="user-name-display" id="userNameMobile"></span>
+          </div>
+        </li>
+
+        <!-- Navigation Links -->
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./booking.html">Consultation</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <!-- <li><a href="./products.html">Products</a></li> -->
+        <li><a href="./services.html">Services</a></li>
+
+        <!-- Theme Toggle -->
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i data-lucide="moon" class="theme-icon moon-icon" id="moonIcon"></i>
+            <i data-lucide="sun" class="theme-icon sun-icon" id="sunIcon"></i>
+            <span class="theme-text" id="themeText">Dark Mode</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <header class="header">
+      <h1 class="header-title">Our Projects</h1>
+      <div class="header-location">
+        <i data-lucide="map-pin"></i>
+        <span>Manipal, Udupi & Surrounding Areas</span>
+      </div>
+    </header>
+
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">
+        All Projects
+      </button>
+      <button class="filter-tab" data-filter="residential">
+        Residential
+      </button>
+      <button class="filter-tab" data-filter="commercial">Commercial</button>
+      <button class="filter-tab" data-filter="renovation">Renovation</button>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <article class="project-card" data-type="residential">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80" alt="Modern Villa Interior"
+          class="project-image" />
+        <div class="project-content">
+          <div class="project-header">
+            <div style="flex: 1">
+              <h2 class="project-title">Modern Villa Interior</h2>
+              <div class="project-location">
+                <i data-lucide="map-pin"></i> Manipal
+              </div>
+            </div>
+            <span class="project-type residential">Residential</span>
+          </div>
+
+          <p class="project-description">
+            Complete interior design for a 3BHK villa with contemporary
+            aesthetics and traditional Karnataka elements.
+          </p>
+
+          <div class="project-specs">
+            <div class="spec-item">
+              <span class="spec-label">Area</span>
+              <span class="spec-value">2,400 sq.ft</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Style</span>
+              <span class="spec-value">Contemporary</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Duration</span>
+              <span class="spec-value">3 months</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">3 BHK</span>
+            </div>
+          </div>
+
+          <div class="project-feedback">
+            They transformed our house into a dream home! The attention to
+            detail exceeded our expectations.
+            <div class="feedback-author">— Priya & Rajesh Sharma</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card" data-type="commercial">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Café Interior Design"
+          class="project-image" />
+        <div class="project-content">
+          <div class="project-header">
+            <div style="flex: 1">
+              <h2 class="project-title">Café Interior Design</h2>
+              <div class="project-location">
+                <i data-lucide="map-pin"></i> MIT Campus, Manipal
+              </div>
+            </div>
+            <span class="project-type commercial">Commercial</span>
+          </div>
+
+          <p class="project-description">
+            Vibrant café interior with Instagram-worthy aesthetics, designed
+            for college students and young professionals.
+          </p>
+
+          <div class="project-specs">
+            <div class="spec-item">
+              <span class="spec-label">Area</span>
+              <span class="spec-value">1,200 sq.ft</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Style</span>
+              <span class="spec-value">Industrial-Chic</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Duration</span>
+              <span class="spec-value">2 months</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Seating</span>
+              <span class="spec-value">45 people</span>
+            </div>
+          </div>
+
+          <div class="project-feedback">
+            Our café has become the most popular spot in Manipal! Footfall
+            increased by 200% after the renovation.
+            <div class="feedback-author">— Arun Kumar, Café Owner</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card" data-type="residential">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="Coastal Apartment Makeover"
+          class="project-image" />
+        <div class="project-content">
+          <div class="project-header">
+            <div style="flex: 1">
+              <h2 class="project-title">Coastal Apartment</h2>
+              <div class="project-location">
+                <i data-lucide="map-pin"></i> Malpe, Udupi
+              </div>
+            </div>
+            <span class="project-type residential">Residential</span>
+          </div>
+
+          <p class="project-description">
+            Breezy coastal-themed apartment with natural materials, maximizing
+            sea views and beach house atmosphere.
+          </p>
+
+          <div class="project-specs">
+            <div class="spec-item">
+              <span class="spec-label">Area</span>
+              <span class="spec-value">1,800 sq.ft</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Style</span>
+              <span class="spec-value">Coastal Modern</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Duration</span>
+              <span class="spec-value">2.5 months</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">2 BHK</span>
+            </div>
+          </div>
+
+          <div class="project-feedback">
+            Coming home feels like a vacation every day! They understood our
+            beach house vision perfectly.
+            <div class="feedback-author">— Meera & Karthik Rao</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card" data-type="renovation">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+          alt="Traditional Home Renovation" class="project-image" />
+        <div class="project-content">
+          <div class="project-header">
+            <div style="flex: 1">
+              <h2 class="project-title">Traditional Renovation</h2>
+              <div class="project-location">
+                <i data-lucide="map-pin"></i> Udupi City
+              </div>
+            </div>
+            <span class="project-type renovation">Renovation</span>
+          </div>
+
+          <p class="project-description">
+            Complete renovation of a traditional Udupi home, preserving
+            heritage while adding modern conveniences.
+          </p>
+
+          <div class="project-specs">
+            <div class="spec-item">
+              <span class="spec-label">Area</span>
+              <span class="spec-value">3,000 sq.ft</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Style</span>
+              <span class="spec-value">Traditional-Modern</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Duration</span>
+              <span class="spec-value">4 months</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">4 BHK</span>
+            </div>
+          </div>
+
+          <div class="project-feedback">
+            They respected our ancestral home's heritage while making it
+            comfortable for modern living.
+            <div class="feedback-author">— Shenoy Family</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="project-card" data-type="commercial">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" alt="Dental Clinic Interior"
+          class="project-image" />
+        <div class="project-content">
+          <div class="project-header">
+            <div style="flex: 1">
+              <h2 class="project-title">Dental Clinic Interior</h2>
+              <div class="project-location">
+                <i data-lucide="map-pin"></i> Manipal
+              </div>
+            </div>
+            <span class="project-type commercial">Commercial</span>
+          </div>
+
+          <p class="project-description">
+            Welcoming dental clinic interior designed to reduce patient
+            anxiety with soothing colors and comfortable spaces.
+          </p>
+
+          <div class="project-specs">
+            <div class="spec-item">
+              <span class="spec-label">Area</span>
+              <span class="spec-value">1,500 sq.ft</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Style</span>
+              <span class="spec-value">Medical-Modern</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Duration</span>
+              <span class="spec-value">6 weeks</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Rooms</span>
+              <span class="spec-value">3 Chambers</span>
+            </div>
+          </div>
+
+          <div class="project-feedback">
+            Patients constantly compliment the clinic's ambiance. It has
+            definitely helped in growing our practice.
+            <div class="feedback-author">— Dr. Suresh Bhat</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="project-card" data-type="residential">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Compact Studio Design"
+          class="project-image" />
+        <div class="project-content">
+          <div class="project-header">
+            <div style="flex: 1">
+              <h2 class="project-title">Compact Studio</h2>
+              <div class="project-location">
+                <i data-lucide="map-pin"></i> Student Housing, Manipal
+              </div>
+            </div>
+            <span class="project-type residential">Residential</span>
+          </div>
+
+          <p class="project-description">
+            Space-efficient studio apartment for students, maximizing storage
+            and functionality in a compact footprint.
+          </p>
+
+          <div class="project-specs">
+            <div class="spec-item">
+              <span class="spec-label">Area</span>
+              <span class="spec-value">450 sq.ft</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Style</span>
+              <span class="spec-value">Minimalist</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Duration</span>
+              <span class="spec-value">1 month</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Type</span>
+              <span class="spec-value">Studio</span>
+            </div>
+          </div>
+
+          <div class="project-feedback">
+            Perfect for student living! Every inch is utilized smartly. Great
+            value for money.
+            <div class="feedback-author">— Ananya, Medical Student</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>DreamSpace</h3>
+        <p>
+          Creating exceptional interiors that inspire and delight since 2015.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./booking.html">Schedule Consultation</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./wishlist.html">Products Wishlist</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./feedback.html">Share Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li>
+            <a href="./services.html#personalized-design">Personalized Design</a>
+          </li>
+          <li><a href="./services.html#wall-painting">Wall Painting</a></li>
+          <li>
+            <a href="./services.html#furniture-design">Custom Furniture</a>
+          </li>
+          <li>
+            <a href="./services.html#lighting-decor">Lighting & Décor</a>
+          </li>
+          <li>
+            <a href="./services.html#modular-kitchen">Modular Kitchen</a>
+          </li>
+          <li><a href="./services.html#space-planning">Space Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe for design tips and inspiration</p>
+        <form class="newsletter-form">
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DreamSpace Interior Design. All rights reserved.</p>
+
+      <hr class="footer-divider" />
+
+      <p>Designed and developed by our team</p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+      </p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+        <a href="https://jithesh.vercel.app/" target="_blank" rel="noopener noreferrer">Jithesh</a>
+        |
+        <a href="https://github.com/thanisha2060" target="_blank" rel="noopener noreferrer">Thanisha</a>
+        |
+        <a href="https://github.com/Niranjan709" target="_blank" rel="noopener noreferrer">Niranjan</a>
+        |
+        <a href="https://github.com/Spoorti15" target="_blank" rel="noopener noreferrer">Spoorti</a>
+      </p>
+
+      <p>
+        <a href="https://github.com/jithesh-poojari/interior-design-website" target="_blank" rel="noopener noreferrer">
+          View Project on GitHub
+        </a>
+      </p>
+
+      <p class="disclaimer">
+        This website is a fictional creation for demonstration purposes.
+      </p>
+
+      <p class="credits">
+        Image credits:
+        <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+</body>
+
+</html>

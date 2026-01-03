@@ -1,0 +1,236 @@
+/* Contact Page Specific Styles */
+.contact-page-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.contact-page-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-page-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--foreground));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.contact-page-hero p {
+  color: hsl(var(--muted-foreground));
+  font-size: 1.0625rem;
+}
+
+.contact-page-form {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) * 2);
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px hsla(var(--foreground), 0.08);
+}
+
+.contact-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-group input,
+.contact-form-group select,
+.contact-form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+.contact-form-group input:focus,
+.contact-form-group select:focus,
+.contact-form-group textarea:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+}
+
+.contact-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form-group input.contact-error,
+.contact-form-group select.contact-error,
+.contact-form-group textarea.contact-error {
+  border-color: hsl(0 84% 60%);
+}
+
+.contact-helper-text {
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 0.375rem;
+}
+
+.contact-error-msg {
+  color: hsl(0 84% 60%);
+  font-size: 0.8125rem;
+  display: none;
+}
+
+.contact-error-msg.show {
+  display: block;
+}
+
+/* Service Type Radio Buttons */
+.contact-service-group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.75rem;
+}
+
+.contact-radio-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.contact-radio-button {
+  position: relative;
+}
+
+.contact-radio-button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.contact-radio-button label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--background));
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.contact-radio-button input[type="radio"]:checked + label {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+.contact-radio-button label:hover {
+  background: hsl(var(--muted));
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.contact-radio-button input[type="radio"]:checked + label:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+
+/* Form Actions */
+.contact-form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}
+
+.contact-btn-reset {
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+}
+
+.contact-btn-reset:hover {
+  background: hsl(var(--muted) / 0.7);
+}
+
+.contact-btn-submit {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.contact-btn-submit:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+
+/* Fieldset */
+.contact-fieldset {
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) * 1.5);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--background)),
+    hsl(var(--background) / 0.5)
+  );
+}
+
+.contact-fieldset .contact-form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.contact-fieldset-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  padding: 0 0.75rem;
+}
+
+.auto-fill-badge {
+  display: none;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .contact-page-form {
+    padding: 1.5rem;
+  }
+
+  .contact-radio-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .contact-form-actions button {
+    width: 100%;
+  }
+}

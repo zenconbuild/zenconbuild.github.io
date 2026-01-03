@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Zencon Build for interior design consultations, quotes, and services." />
+  <title>Contact Us - Zencon Build</title>
+
+  <link rel="preload" href="./assets/fonts/Recursive-VariableFont.woff2" as="font" type="font/woff2" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="./script/main.js"></script>
+  <script defer src="./script/contact.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="top-header">
+    <nav class="nav-container">
+      <a class="logo" href="./index.html"><img src="./images/logo.svg" alt="Zencon Build"> Zencon Build</a>
+
+      <!-- Menu Toggle with Lucide Icons -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i data-lucide="menu" class="menu-icon"></i>
+        <i data-lucide="x" class="close-icon"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <!-- User Welcome (Mobile Only - Shows at top when authenticated) -->
+        <li class="user-welcome" id="userWelcome">
+          <div class="user-welcome-content">
+            <span class="welcome-text">Welcome,</span>
+            <span class="user-name-display" id="userNameMobile"></span>
+          </div>
+        </li>
+
+        <!-- Navigation Links -->
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./booking.html">Consultation</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <!-- <li><a href="./products.html">Products</a></li> -->
+        <li><a href="./services.html">Services</a></li>
+
+        <!-- Theme Toggle -->
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i data-lucide="moon" class="theme-icon moon-icon" id="moonIcon"></i>
+            <i data-lucide="sun" class="theme-icon sun-icon" id="sunIcon"></i>
+            <span class="theme-text" id="themeText">Dark Mode</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-page-container">
+    <div class="contact-page-hero">
+      <h1>Contact Us</h1>
+      <p>
+        Let's bring your dream space to life. Get in touch with our design
+        experts today!
+      </p>
+    </div>
+
+    <form class="contact-page-form" id="contactForm" novalidate>
+      <!-- Personal Information -->
+      <fieldset class="contact-fieldset">
+        <legend class="contact-fieldset-legend">
+          <i data-lucide="user"></i>
+          Personal Information
+        </legend>
+
+        <div class="contact-form-group">
+          <label for="name">
+            Name
+            <span id="autoFilledNameBadge" class="auto-fill-badge">
+              ✓ Auto-filled
+            </span>
+          </label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+          <span class="contact-error-msg" id="errorName"></span>
+        </div>
+
+        <div class="contact-form-group">
+          <label for="email">
+            Email
+            <span id="autoFilledEmailBadge" class="auto-fill-badge">
+              ✓ Auto-filled
+            </span>
+          </label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required />
+          <span class="contact-error-msg" id="errorEmail"></span>
+        </div>
+
+        <div class="contact-form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" maxlength="10" placeholder="10-digit mobile number" required />
+          <div class="contact-helper-text">
+            Enter 10-digit Indian mobile number
+          </div>
+          <span class="contact-error-msg" id="errorPhone"></span>
+        </div>
+      </fieldset>
+
+      <!-- Inquiry Details -->
+      <fieldset class="contact-fieldset">
+        <legend class="contact-fieldset-legend">
+          <i data-lucide="message-square"></i>
+          Inquiry Details
+        </legend>
+
+        <div class="contact-form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a subject</option>
+            <option value="quote">Request a Quote</option>
+            <option value="service">Service Inquiry</option>
+            <option value="partnership">Business Partnership</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="contact-error-msg" id="errorSubject"></span>
+        </div>
+
+        <div class="contact-form-group">
+          <div class="contact-service-group-label">Service Type</div>
+          <div class="contact-radio-buttons">
+            <div class="contact-radio-button">
+              <input type="radio" id="residential" name="serviceType" value="residential" />
+              <label for="residential">
+                <i data-lucide="home"></i>
+                Residential
+              </label>
+            </div>
+            <div class="contact-radio-button">
+              <input type="radio" id="commercial" name="serviceType" value="commercial" />
+              <label for="commercial">
+                <i data-lucide="building"></i>
+                Commercial
+              </label>
+            </div>
+            <div class="contact-radio-button">
+              <input type="radio" id="renovation" name="serviceType" value="renovation" />
+              <label for="renovation">
+                <i data-lucide="hammer"></i>
+                Renovation
+              </label>
+            </div>
+            <div class="contact-radio-button">
+              <input type="radio" id="consultation" name="serviceType" value="consultation" />
+              <label for="consultation">
+                <i data-lucide="calendar"></i>
+                Consultation
+              </label>
+            </div>
+          </div>
+          <span class="contact-error-msg" id="errorService"></span>
+        </div>
+
+        <div class="contact-form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..."
+            required></textarea>
+          <span class="contact-error-msg" id="errorMessage"></span>
+        </div>
+      </fieldset>
+
+      <!-- Actions -->
+      <div class="contact-form-actions">
+        <button type="reset" class="btn contact-btn-reset">
+          <i data-lucide="rotate-ccw"></i>
+          Clear Form
+        </button>
+        <button type="submit" class="btn contact-btn-submit">
+          <i data-lucide="send"></i>
+          Send Message
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>DreamSpace</h3>
+        <p>
+          Creating exceptional interiors that inspire and delight since 2015.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./booking.html">Schedule Consultation</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./wishlist.html">Products Wishlist</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./feedback.html">Share Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li>
+            <a href="./services.html#personalized-design">Personalized Design</a>
+          </li>
+          <li><a href="./services.html#wall-painting">Wall Painting</a></li>
+          <li>
+            <a href="./services.html#furniture-design">Custom Furniture</a>
+          </li>
+          <li>
+            <a href="./services.html#lighting-decor">Lighting & Décor</a>
+          </li>
+          <li>
+            <a href="./services.html#modular-kitchen">Modular Kitchen</a>
+          </li>
+          <li><a href="./services.html#space-planning">Space Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe for design tips and inspiration</p>
+        <form class="newsletter-form">
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DreamSpace Interior Design. All rights reserved.</p>
+
+      <hr class="footer-divider" />
+
+      <p>Designed and developed by our team</p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+      </p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+        <a href="https://jithesh.vercel.app/" target="_blank" rel="noopener noreferrer">Jithesh</a>
+        |
+        <a href="https://github.com/thanisha2060" target="_blank" rel="noopener noreferrer">Thanisha</a>
+        |
+        <a href="https://github.com/Niranjan709" target="_blank" rel="noopener noreferrer">Niranjan</a>
+        |
+        <a href="https://github.com/Spoorti15" target="_blank" rel="noopener noreferrer">Spoorti</a>
+      </p>
+
+      <p>
+        <a href="https://github.com/jithesh-poojari/interior-design-website" target="_blank" rel="noopener noreferrer">
+          View Project on GitHub
+        </a>
+      </p>
+
+      <p class="disclaimer">
+        This website is a fictional creation for demonstration purposes.
+      </p>
+
+      <p class="credits">
+        Image credits:
+        <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+</body>
+
+</html>

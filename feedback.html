@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Share your feedback with Zencon Build - We value your opinions and suggestions" />
+  <title>Share Feedback - Zencon Build</title>
+
+  <link rel="preload" href="./assets/fonts/Recursive-VariableFont.woff2" as="font" type="font/woff2" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/feedback.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="./script/main.js"></script>
+  <script defer src="./script/feedback.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="top-header">
+    <nav class="nav-container">
+      <a class="logo" href="./index.html"><img src="./images/logo.svg" alt="Zencon Build"> Zencon Build</a>
+
+      <!-- Menu Toggle with Lucide Icons -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i data-lucide="menu" class="menu-icon"></i>
+        <i data-lucide="x" class="close-icon"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <!-- User Welcome (Mobile Only - Shows at top when authenticated) -->
+        <li class="user-welcome" id="userWelcome">
+          <div class="user-welcome-content">
+            <span class="welcome-text">Welcome,</span>
+            <span class="user-name-display" id="userNameMobile"></span>
+          </div>
+        </li>
+
+        <!-- Navigation Links -->
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./booking.html">Consultation</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <!-- <li><a href="./products.html">Products</a></li> -->
+        <li><a href="./services.html">Services</a></li>
+
+        <!-- Theme Toggle -->
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i data-lucide="moon" class="theme-icon moon-icon" id="moonIcon"></i>
+            <i data-lucide="sun" class="theme-icon sun-icon" id="sunIcon"></i>
+            <span class="theme-text" id="themeText">Dark Mode</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="feedback-page-container">
+    <div class="feedback-page-hero">
+      <h1>Share Your Feedback</h1>
+      <p>Your opinions matter! Help us improve our services.</p>
+    </div>
+
+    <form class="feedback-page-form" id="feedbackForm" novalidate>
+      <!-- Personal Information -->
+      <fieldset class="feedback-fieldset">
+        <legend class="feedback-fieldset-legend">
+          <i data-lucide="user"></i>
+          Your Information
+        </legend>
+
+        <div class="feedback-form-group">
+          <label for="name">Name<span id="autoFilledNameBadge" class="auto-fill-badge">
+              ✓ Auto-filled
+            </span></label>
+          <input id="name" name="name" type="text" placeholder="Enter your name" required />
+          <span class="feedback-error-msg" id="errorName"></span>
+        </div>
+
+        <div class="feedback-form-group">
+          <label for="email">Email<span id="autoFilledEmailBadge" class="auto-fill-badge">
+              ✓ Auto-filled
+            </span></label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          <span class="feedback-error-msg" id="errorEmail"></span>
+        </div>
+      </fieldset>
+
+      <!-- Feedback Details -->
+      <fieldset class="feedback-fieldset">
+        <legend class="feedback-fieldset-legend">
+          <i data-lucide="star"></i>
+          Your Experience
+        </legend>
+
+        <div class="feedback-form-group">
+          <div class="feedback-rating-group-label">Overall Experience</div>
+          <div class="feedback-rating-buttons">
+            <div class="feedback-rating-button">
+              <input type="radio" id="rate5" name="rating" value="5" />
+              <label for="rate5">Excellent</label>
+            </div>
+            <div class="feedback-rating-button">
+              <input type="radio" id="rate4" name="rating" value="4" />
+              <label for="rate4">Good</label>
+            </div>
+            <div class="feedback-rating-button">
+              <input type="radio" id="rate3" name="rating" value="3" />
+              <label for="rate3">Average</label>
+            </div>
+            <div class="feedback-rating-button">
+              <input type="radio" id="rate2" name="rating" value="2" />
+              <label for="rate2">Poor</label>
+            </div>
+            <div class="feedback-rating-button">
+              <input type="radio" id="rate1" name="rating" value="1" />
+              <label for="rate1">Very Poor</label>
+            </div>
+          </div>
+          <span class="feedback-error-msg" id="errorRating"></span>
+        </div>
+
+        <div class="feedback-form-group">
+          <label for="serviceType">Service Type</label>
+          <select id="serviceType" name="serviceType" required>
+            <option value="">Select a service type</option>
+            <option value="residential-design">Residential Design</option>
+            <option value="commercial-design">Commercial Design</option>
+            <option value="renovation">Renovation</option>
+            <option value="modular-kitchen">Modular Kitchen</option>
+            <option value="custom-furniture">Custom Furniture</option>
+            <option value="consultation">Consultation Only</option>
+            <option value="complete-interior">
+              Complete Interior Design
+            </option>
+          </select>
+          <span class="feedback-error-msg" id="errorService"></span>
+        </div>
+
+        <div class="feedback-form-group">
+          <div class="feedback-rating-group-label">What Did You Like?</div>
+          <div class="feedback-checkbox-group">
+            <div class="feedback-checkbox-wrapper">
+              <input type="checkbox" id="quality" name="likes" value="quality" />
+              <label for="quality">Quality of Work</label>
+            </div>
+            <div class="feedback-checkbox-wrapper">
+              <input type="checkbox" id="professionalism" name="likes" value="professionalism" />
+              <label for="professionalism">Professionalism</label>
+            </div>
+            <div class="feedback-checkbox-wrapper">
+              <input type="checkbox" id="communication" name="likes" value="communication" />
+              <label for="communication">Communication</label>
+            </div>
+            <div class="feedback-checkbox-wrapper">
+              <input type="checkbox" id="timeliness" name="likes" value="timeliness" />
+              <label for="timeliness">Timeliness</label>
+            </div>
+            <div class="feedback-checkbox-wrapper">
+              <input type="checkbox" id="creativity" name="likes" value="creativity" />
+              <label for="creativity">Creativity</label>
+            </div>
+          </div>
+          <span class="feedback-error-msg" id="errorLikes"></span>
+        </div>
+
+        <div class="feedback-form-group">
+          <label for="comments">Additional Comments (Optional)</label>
+          <textarea id="comments" name="comments" placeholder="Share your feedback..."></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Actions -->
+      <div class="feedback-form-actions">
+        <button type="reset" class="btn feedback-btn-reset">
+          <i data-lucide="rotate-ccw"></i>
+          Clear Form
+        </button>
+        <button type="submit" class="btn feedback-btn-submit">
+          <i data-lucide="send"></i>
+          Submit Feedback
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>DreamSpace</h3>
+        <p>
+          Creating exceptional interiors that inspire and delight since 2015.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./booking.html">Schedule Consultation</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./wishlist.html">Products Wishlist</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./feedback.html">Share Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li>
+            <a href="./services.html#personalized-design">Personalized Design</a>
+          </li>
+          <li><a href="./services.html#wall-painting">Wall Painting</a></li>
+          <li>
+            <a href="./services.html#furniture-design">Custom Furniture</a>
+          </li>
+          <li>
+            <a href="./services.html#lighting-decor">Lighting & Décor</a>
+          </li>
+          <li>
+            <a href="./services.html#modular-kitchen">Modular Kitchen</a>
+          </li>
+          <li><a href="./services.html#space-planning">Space Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe for design tips and inspiration</p>
+        <form class="newsletter-form">
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DreamSpace Interior Design. All rights reserved.</p>
+
+      <hr class="footer-divider" />
+
+      <p>Designed and developed by our team</p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+      </p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+        <a href="https://jithesh.vercel.app/" target="_blank" rel="noopener noreferrer">Jithesh</a>
+        |
+        <a href="https://github.com/thanisha2060" target="_blank" rel="noopener noreferrer">Thanisha</a>
+        |
+        <a href="https://github.com/Niranjan709" target="_blank" rel="noopener noreferrer">Niranjan</a>
+        |
+        <a href="https://github.com/Spoorti15" target="_blank" rel="noopener noreferrer">Spoorti</a>
+      </p>
+
+      <p>
+        <a href="https://github.com/jithesh-poojari/interior-design-website" target="_blank" rel="noopener noreferrer">
+          View Project on GitHub
+        </a>
+      </p>
+
+      <p class="disclaimer">
+        This website is a fictional creation for demonstration purposes.
+      </p>
+
+      <p class="credits">
+        Image credits:
+        <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+</body>
+
+</html>

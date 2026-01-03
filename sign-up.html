@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - DreamSpace Interiors</title>
+    <link
+      rel="preload"
+      href="./assets/fonts/Inter-VariableFont.woff2"
+      as="font"
+      type="font/woff2"
+    />
+    <link
+      href="./assets/fonts/PlaywriteUSModern.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+    />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="./script/main.js"></script>
+    <script defer src="./script/sign-up.js"></script>
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <h1>Create Account</h1>
+            <p>Join DreamSpace to get started</p>
+          </div>
+
+          <form class="auth-form" id="signupForm">
+            <div class="form-field">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                required
+                autocomplete="name"
+              />
+              <span class="error-message" id="nameError"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+              />
+              <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="password">Password</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="••••••••"
+                  required
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  id="togglePassword"
+                  aria-label="Toggle password visibility"
+                >
+                  <i data-lucide="eye" id="eyeIcon"></i>
+                  <i
+                    data-lucide="eye-off"
+                    id="eyeOffIcon"
+                    style="display: none"
+                  ></i>
+                </button>
+              </div>
+              <span class="error-message" id="passwordError"></span>
+              <div style="margin-top: 0.5rem">
+                <div
+                  id="passwordStrength"
+                  style="
+                    font-size: 0.8125rem;
+                    color: hsl(var(--muted-foreground));
+                  "
+                >
+                  Password strength: <span id="strengthText">Weak</span>
+                </div>
+                <div
+                  style="
+                    height: 4px;
+                    background: hsl(var(--muted));
+                    border-radius: 2px;
+                    margin-top: 0.25rem;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    id="strengthBar"
+                    style="
+                      height: 100%;
+                      width: 0%;
+                      background: hsl(0 84% 60%);
+                      transition: all 0.3s ease;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="••••••••"
+                  required
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  id="toggleConfirmPassword"
+                  aria-label="Toggle password visibility"
+                >
+                  <i data-lucide="eye" id="eyeIcon2"></i>
+                  <i
+                    data-lucide="eye-off"
+                    id="eyeOffIcon2"
+                    style="display: none"
+                  ></i>
+                </button>
+              </div>
+              <span class="error-message" id="confirmPasswordError"></span>
+            </div>
+
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="terms" name="terms" required />
+              <label for="terms" style="font-size: 0.875rem">
+                I agree to the
+                <a href="#" class="forgot-link">Terms of Service</a> and
+                <a href="#" class="forgot-link">Privacy Policy</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-auth primary" id="signupBtn">
+              Create Account
+              <i data-lucide="user-plus"></i>
+            </button>
+          </form>
+
+          <div class="auth-footer">
+            Already have an account?
+            <a href="./login.html">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+  </body>
+</html>

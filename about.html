@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Zencon Build</title>
+
+  <link rel="preload" href="./assets/fonts/Recursive-VariableFont.woff2" as="font" type="font/woff2" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="./script/main.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="top-header">
+    <nav class="nav-container">
+      <a class="logo" href="./index.html"><img src="./images/logo.svg" alt="Zencon Build"> Zencon Build</a>
+
+      <!-- Menu Toggle with Lucide Icons -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i data-lucide="menu" class="menu-icon"></i>
+        <i data-lucide="x" class="close-icon"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <!-- User Welcome (Mobile Only - Shows at top when authenticated) -->
+        <li class="user-welcome" id="userWelcome">
+          <div class="user-welcome-content">
+            <span class="welcome-text">Welcome,</span>
+            <span class="user-name-display" id="userNameMobile"></span>
+          </div>
+        </li>
+
+        <!-- Navigation Links -->
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./booking.html">Consultation</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <!-- <li><a href="./products.html">Products</a></li> -->
+        <li><a href="./services.html">Services</a></li>
+
+        <!-- Theme Toggle -->
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i data-lucide="moon" class="theme-icon moon-icon" id="moonIcon"></i>
+            <i data-lucide="sun" class="theme-icon sun-icon" id="sunIcon"></i>
+            <span class="theme-text" id="themeText">Dark Mode</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="about-page">
+    <!-- INTRO -->
+    <section class="about-intro">
+      <div class="about-intro-badge">
+        <i data-lucide="home"></i>
+        <span>About DreamSpace Interiors</span>
+      </div>
+      <h1>Designing Spaces That Feel Like Home</h1>
+      <p>
+        Based in Manipal, Udupi, we craft elegant and practical interiors that
+        reflect your lifestyle. Every project—whether a cozy apartment, a
+        café, or a modern office—is designed with care, creativity, and local
+        craftsmanship.
+      </p>
+    </section>
+
+    <!-- STORY -->
+    <section class="about-story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&h=1000&fit=crop"
+              alt="DreamSpace Studio in Manipal" />
+          </div>
+          <div class="story-content">
+            <h2>Our Story</h2>
+            <p>
+              DreamSpace Interiors was founded in 2015 with one goal — to make
+              professional interior design accessible and personal for homes
+              and businesses in coastal Karnataka.
+            </p>
+            <p>
+              Over the years, we've completed 200+ residential and commercial
+              projects across Manipal, Udupi, and Mangalore. From compact
+              apartments to boutique hotels, our approach stays consistent —
+              thoughtful design, honest materials, and functional beauty.
+            </p>
+
+            <div class="story-stats">
+              <div class="story-stat">
+                <h3>200+</h3>
+                <p>Projects Delivered</p>
+              </div>
+              <div class="story-stat">
+                <h3>9+</h3>
+                <p>Years of Experience</p>
+              </div>
+              <div class="story-stat">
+                <h3>100%</h3>
+                <p>Local Team</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="about-values">
+      <div class="container">
+        <div class="section-header">
+          <h2>What We Believe In</h2>
+          <p>
+            Our values guide every space we create and every relationship we
+            build.
+          </p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i data-lucide="heart" width="28" height="28"></i>
+            </div>
+            <h3>Personal Connection</h3>
+            <p>
+              We design spaces around people — how they live, work, and feel
+              every day.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i data-lucide="check-circle" width="28" height="28"></i>
+            </div>
+            <h3>Quality & Detail</h3>
+            <p>
+              Every finish, fixture, and color is carefully chosen to ensure
+              longevity and beauty.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i data-lucide="leaf" width="28" height="28"></i>
+            </div>
+            <h3>Rooted in Sustainability</h3>
+            <p>
+              We prioritize locally sourced materials and eco-friendly
+              practices in every design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="about-timeline">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Journey</h2>
+          <p>
+            Key moments that shaped DreamSpace into the studio it is today.
+          </p>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>The Beginning</h3>
+              <p>
+                DreamSpace Interiors was founded in Manipal with a vision to
+                bring thoughtful, personalized design to coastal Karnataka.
+              </p>
+            </div>
+            <div class="timeline-year-wrapper">
+              <span class="timeline-year">2015</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>First Commercial Project</h3>
+              <p>
+                Completed our first café interior in Udupi, marking our entry
+                into commercial design and establishing local partnerships.
+              </p>
+            </div>
+            <div class="timeline-year-wrapper">
+              <span class="timeline-year">2017</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Expanding the Team</h3>
+              <p>
+                Grew our team to include specialized designers and project
+                managers to handle increasing demand across the region.
+              </p>
+            </div>
+            <div class="timeline-year-wrapper">
+              <span class="timeline-year">2019</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>100+ Projects Milestone</h3>
+              <p>
+                Celebrated completing over 100 successful projects, from cozy
+                apartments to boutique hotels in Manipal and Mangalore.
+              </p>
+            </div>
+            <div class="timeline-year-wrapper">
+              <span class="timeline-year">2021</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Sustainability Focus</h3>
+              <p>
+                Launched our eco-friendly initiative, committing to locally
+                sourced materials and sustainable design practices.
+              </p>
+            </div>
+            <div class="timeline-year-wrapper">
+              <span class="timeline-year">2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="about-process">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Process</h2>
+          <p>A seamless journey from concept to completion</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-icon">
+              <i data-lucide="messages-square"></i>
+            </div>
+            <h3>Consultation</h3>
+            <p>We listen to your ideas, needs, and vision for your space</p>
+          </div>
+          <div class="process-step">
+            <div class="process-icon">
+              <i data-lucide="pencil-ruler"></i>
+            </div>
+            <h3>Design</h3>
+            <p>Our team creates detailed plans and 3D renderings</p>
+          </div>
+          <div class="process-step">
+            <div class="process-icon">
+              <i data-lucide="clipboard-check"></i>
+            </div>
+            <h3>Approval</h3>
+            <p>Review and refine until the design is perfect</p>
+          </div>
+          <div class="process-step">
+            <div class="process-icon">
+              <i data-lucide="hammer"></i>
+            </div>
+            <h3>Execution</h3>
+            <p>We bring your vision to life with expert craftsmanship</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="about-team">
+      <div class="container">
+        <div class="section-header">
+          <h2>Meet Our Team</h2>
+          <p>
+            Local designers and project experts dedicated to quality and
+            client satisfaction.
+          </p>
+        </div>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-member-image">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop"
+                alt="Priya Shetty" />
+            </div>
+            <div class="team-member-info">
+              <h3>Priya Shetty</h3>
+              <p class="role">Founder & Lead Designer</p>
+              <p>
+                Leads the creative direction with over a decade of residential
+                and commercial experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-member-image">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop"
+                alt="Anand Rao" />
+            </div>
+            <div class="team-member-info">
+              <h3>Anand Rao</h3>
+              <p class="role">Lead Architect</p>
+              <p>
+                Blends aesthetics with functionality, ensuring every
+                DreamSpace design is both elegant and enduring.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-member-image">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop"
+                alt="Sneha Kumari" />
+            </div>
+            <div class="team-member-info">
+              <h3>Sneha Kumari</h3>
+              <p class="role">Interior Stylist</p>
+              <p>
+                Brings spaces to life with her eye for color, texture, and
+                contemporary design trends.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-member-image">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+                alt="Rohan Nayak" />
+            </div>
+            <div class="team-member-info">
+              <h3>Rohan Nayak</h3>
+              <p class="role">Project Manager</p>
+              <p>
+                Oversees on-site execution, vendor coordination, and ensures
+                seamless delivery.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="team-member-image">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=500&fit=crop"
+                alt="Divya Pai" />
+            </div>
+            <div class="team-member-info">
+              <h3>Divya Pai</h3>
+              <p class="role">Client Relations Manager</p>
+              <p>
+                Ensures smooth communication and a delightful experience for
+                every client throughout the project.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="about-testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Clients Say</h2>
+          <p>Real stories from families who trusted DreamSpace</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+            </div>
+            <p class="testimonial-text">
+              "DreamSpace turned our new apartment in Manipal into a warm,
+              cozy home. Every corner reflects our lifestyle perfectly. The
+              team was friendly and understood exactly what we wanted."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://i.pravatar.cc/150?img=47" alt="Ananya Rao" class="author-image" />
+              <div class="author-info">
+                <h4>Ananya Rao</h4>
+                <p>Homeowner, Manipal</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+            </div>
+            <p class="testimonial-text">
+              "Our café in Udupi got a complete makeover thanks to DreamSpace.
+              The rustic and modern blend attracts more customers now. Their
+              design sense is simply brilliant!"
+            </p>
+            <div class="testimonial-author">
+              <img src="https://i.pravatar.cc/150?img=35" alt="Rahul Shetty" class="author-image" />
+              <div class="author-info">
+                <h4>Rahul Shetty</h4>
+                <p>Café Owner, Udupi</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+              <i data-lucide="star" fill="#fbbf24"></i>
+            </div>
+            <p class="testimonial-text">
+              "We wanted a compact, minimal design for our 2BHK in Karkala.
+              The DreamSpace team made it look spacious and calming with their
+              color palette and layout ideas. Highly satisfied!"
+            </p>
+            <div class="testimonial-author">
+              <img src="https://i.pravatar.cc/150?img=15" alt="Divya & Arjun" class="author-image" />
+              <div class="author-info">
+                <h4>Divya & Arjun</h4>
+                <p>Couple, Karkala</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Let's Design Your Dream Space</h2>
+          <p>
+            Whether it's your home, office, or café — we'll help you bring
+            your vision to life beautifully.
+          </p>
+          <div class="cta-buttons">
+            <a href="./booking.html" class="cta-btn-primary">
+              <i data-lucide="calendar"></i> Book Consultation
+            </a>
+            <a href="./projects.html" class="cta-btn-secondary">
+              <i data-lucide="image"></i> View Our Work
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>DreamSpace</h3>
+        <p>
+          Creating exceptional interiors that inspire and delight since 2015.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <i data-lucide="twitter"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./booking.html">Schedule Consultation</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./wishlist.html">Products Wishlist</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./feedback.html">Share Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li>
+            <a href="./services.html#personalized-design">Personalized Design</a>
+          </li>
+          <li><a href="./services.html#wall-painting">Wall Painting</a></li>
+          <li>
+            <a href="./services.html#furniture-design">Custom Furniture</a>
+          </li>
+          <li>
+            <a href="./services.html#lighting-decor">Lighting & Décor</a>
+          </li>
+          <li>
+            <a href="./services.html#modular-kitchen">Modular Kitchen</a>
+          </li>
+          <li><a href="./services.html#space-planning">Space Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe for design tips and inspiration</p>
+        <form class="newsletter-form">
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DreamSpace Interior Design. All rights reserved.</p>
+
+      <hr class="footer-divider" />
+
+      <p>Designed and developed by our team</p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+      </p>
+
+      <p class="team-links">
+        <strong>Team Members:</strong>
+        <a href="https://jithesh.vercel.app/" target="_blank" rel="noopener noreferrer">Jithesh</a>
+        |
+        <a href="https://github.com/thanisha2060" target="_blank" rel="noopener noreferrer">Thanisha</a>
+        |
+        <a href="https://github.com/Niranjan709" target="_blank" rel="noopener noreferrer">Niranjan</a>
+        |
+        <a href="https://github.com/Spoorti15" target="_blank" rel="noopener noreferrer">Spoorti</a>
+      </p>
+
+      <p>
+        <a href="https://github.com/jithesh-poojari/interior-design-website" target="_blank" rel="noopener noreferrer">
+          View Project on GitHub
+        </a>
+      </p>
+
+      <p class="disclaimer">
+        This website is a fictional creation for demonstration purposes.
+      </p>
+
+      <p class="credits">
+        Image credits:
+        <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Footer will be added here -->
+  <div id="toast" class="toast"></div>
+</body>
+
+</html>

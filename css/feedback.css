@@ -1,0 +1,309 @@
+/* Feedback Page Specific Styles */
+.feedback-page-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.feedback-page-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.feedback-page-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--foreground));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.feedback-page-hero p {
+  color: hsl(var(--muted-foreground));
+  font-size: 1.0625rem;
+}
+
+.feedback-page-form {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) * 2);
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px hsla(var(--foreground), 0.08);
+}
+
+.feedback-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.feedback-form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+.feedback-form-group input,
+.feedback-form-group select,
+.feedback-form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+.feedback-form-group input:focus,
+.feedback-form-group select:focus,
+.feedback-form-group textarea:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+}
+
+.feedback-form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.feedback-form-group input.feedback-error,
+.feedback-form-group select.feedback-error {
+  border-color: hsl(0 84% 60%);
+}
+
+.feedback-error-msg {
+  color: hsl(0 84% 60%);
+  font-size: 0.8125rem;
+  margin-top: 0.375rem;
+  display: none;
+}
+
+.feedback-error-msg.show {
+  display: block;
+}
+
+/* Rating Buttons */
+.feedback-rating-group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.75rem;
+}
+
+.feedback-rating-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+.feedback-rating-button {
+  position: relative;
+}
+
+.feedback-rating-button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.feedback-rating-button label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--background));
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.feedback-rating-button input[type="radio"]:checked + label {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+.feedback-rating-button label:hover {
+  background: hsl(var(--muted));
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.feedback-rating-button input[type="radio"]:checked + label:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+
+/* Checkbox Group */
+.feedback-checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.75rem;
+}
+
+.feedback-checkbox-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.feedback-checkbox-wrapper input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.feedback-checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background: hsl(var(--background));
+  transition: all 0.2s ease;
+  margin: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  user-select: none;
+}
+
+.feedback-checkbox-wrapper label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid hsl(var(--border));
+  border-radius: 4px;
+  background: hsl(var(--background));
+  transition: all 0.2s ease;
+}
+
+.feedback-checkbox-wrapper:hover label {
+  background: hsl(var(--muted));
+  border-color: hsl(var(--primary) / 0.5);
+}
+
+.feedback-checkbox-wrapper:hover label:before {
+  border-color: hsl(var(--primary));
+}
+
+.feedback-checkbox-wrapper input[type="checkbox"]:checked + label {
+  background: hsl(var(--primary) / 0.1);
+  border-color: hsl(var(--primary));
+}
+
+.feedback-checkbox-wrapper input[type="checkbox"]:checked + label:before {
+  background: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feedback-checkbox-wrapper input[type="checkbox"]:focus + label {
+  outline: none;
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+}
+
+/* Form Actions */
+.feedback-form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}
+
+.feedback-btn-reset {
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+}
+
+.feedback-btn-reset:hover {
+  background: hsl(var(--muted) / 0.7);
+}
+
+.feedback-btn-submit {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.feedback-btn-submit:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+
+/* Fieldset */
+.feedback-fieldset {
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) * 1.5);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--background)),
+    hsl(var(--background) / 0.5)
+  );
+}
+
+.feedback-fieldset .feedback-form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.feedback-fieldset-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  padding: 0 0.75rem;
+}
+
+.auto-fill-badge {
+  display: none;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .feedback-page-form {
+    padding: 1.5rem;
+  }
+
+  .feedback-rating-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .feedback-form-actions button {
+    width: 100%;
+  }
+}

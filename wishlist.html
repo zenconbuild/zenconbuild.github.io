@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Wishlist - DreamSpace Interiors</title>
+
+    <link
+      rel="preload"
+      href="./assets/fonts/Inter-VariableFont.woff2"
+      as="font"
+      type="font/woff2"
+    />
+    <link
+      href="./assets/fonts/PlaywriteUSModern.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+    />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/wishlist.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="./script/main.js"></script>
+    <script defer src="./script/wishlist.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="top-header">
+      <nav class="nav-container">
+        <a class="logo" href="./index.html">DreamSpace</a>
+
+        <!-- Menu Toggle with Lucide Icons -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <i data-lucide="menu" class="menu-icon"></i>
+          <i data-lucide="x" class="close-icon"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <!-- User Welcome (Mobile Only - Shows at top when authenticated) -->
+          <li class="user-welcome" id="userWelcome">
+            <div class="user-welcome-content">
+              <span class="welcome-text">Welcome,</span>
+              <span class="user-name-display" id="userNameMobile"></span>
+            </div>
+          </li>
+
+          <!-- Navigation Links -->
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./booking.html">Consultation</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./services.html">Services</a></li>
+
+          <!-- Theme Toggle -->
+          <li>
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Toggle theme"
+            >
+              <i
+                data-lucide="moon"
+                class="theme-icon moon-icon"
+                id="moonIcon"
+              ></i>
+              <i data-lucide="sun" class="theme-icon sun-icon" id="sunIcon"></i>
+              <span class="theme-text" id="themeText">Dark Mode</span>
+            </button>
+          </li>
+
+          <!-- Auth Section - Login/Signup (Hidden when authenticated) -->
+          <li class="auth-section" id="authSection" style="display: none">
+            <a href="./login.html" class="btn btn-outline auth-btn">
+              <i data-lucide="log-in"></i>
+              Login
+            </a>
+            <a href="./sign-up.html" class="btn btn-primary auth-btn">
+              <i data-lucide="user-plus"></i>
+              Sign Up
+            </a>
+          </li>
+
+          <!-- User Section - Name & Logout (Hidden when not authenticated) -->
+          <li class="user-section" id="userSection" style="display: none">
+            <button class="btn btn-primary" id="logoutBtn">
+              <i data-lucide="log-out"></i>
+              Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="wishlist-container">
+      <div class="wishlist-hero">
+        <h1>Your Wishlist</h1>
+        <p>
+          Save the designs that inspire you. We'll use your wishlist to bring
+          your dream interiors to life.
+        </p>
+      </div>
+
+      <!-- Controls -->
+      <div class="wishlist-controls">
+        <div class="controls-group">
+          <select id="sortSelect" class="control-select">
+            <option value="default">Sort By: Default</option>
+            <option value="name-asc">Name: A → Z</option>
+            <option value="name-desc">Name: Z → A</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+          </select>
+
+          <select id="categorySelect" class="control-select">
+            <option value="all">All Categories</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Lighting">Lighting</option>
+            <option value="Decor">Decor</option>
+          </select>
+        </div>
+
+        <a href="./products.html" class="back-link">
+          <i data-lucide="arrow-left"></i>
+          Back to Products
+        </a>
+      </div>
+
+      <!-- Wishlist Grid -->
+      <div class="wishlist-grid" id="wishlistContainer"></div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display: none">
+        <i data-lucide="heart-off"></i>
+        <h3>Your Wishlist is Empty</h3>
+        <p>Start adding your favorite products to see them here</p>
+        <a href="./products.html" class="btn btn-primary">
+          <i data-lucide="shopping-bag"></i>
+          Browse Products
+        </a>
+      </div>
+    </main>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close">
+          <i data-lucide="x"></i>
+        </button>
+        <img
+          id="modalImg"
+          src="images/placeholder.png"
+          alt="Preview"
+          class="modal-image"
+        />
+        <span class="modal-category" id="modalCategory">Category</span>
+        <h2 class="modal-name" id="modalName">Item Name</h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <p class="modal-price" id="modalPrice"></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>DreamSpace</h3>
+          <p>
+            Creating exceptional interiors that inspire and delight since 2015.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./booking.html">Schedule Consultation</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./products.html">Products</a></li>
+            <li><a href="./wishlist.html">Products Wishlist</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+            <li><a href="./feedback.html">Share Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li>
+              <a href="./services.html#personalized-design"
+                >Personalized Design</a
+              >
+            </li>
+            <li><a href="./services.html#wall-painting">Wall Painting</a></li>
+            <li>
+              <a href="./services.html#furniture-design">Custom Furniture</a>
+            </li>
+            <li>
+              <a href="./services.html#lighting-decor">Lighting & Décor</a>
+            </li>
+            <li>
+              <a href="./services.html#modular-kitchen">Modular Kitchen</a>
+            </li>
+            <li><a href="./services.html#space-planning">Space Planning</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Subscribe for design tips and inspiration</p>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-input"
+                placeholder="Enter your email"
+                required
+              />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DreamSpace Interior Design. All rights reserved.</p>
+
+        <hr class="footer-divider" />
+
+        <p>Designed and developed by our team</p>
+
+        <p class="team-links">
+          <strong>Team Members:</strong>
+        </p>
+
+        <p class="team-links">
+          <strong>Team Members:</strong>
+          <a
+            href="https://jithesh.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Jithesh</a
+          >
+          |
+          <a
+            href="https://github.com/thanisha2060"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Thanisha</a
+          >
+          |
+          <a
+            href="https://github.com/Niranjan709"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Niranjan</a
+          >
+          |
+          <a
+            href="https://github.com/Spoorti15"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Spoorti</a
+          >
+        </p>
+
+        <p>
+          <a
+            href="https://github.com/jithesh-poojari/interior-design-website"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project on GitHub
+          </a>
+        </p>
+
+        <p class="disclaimer">
+          This website is a fictional creation for demonstration purposes.
+        </p>
+
+        <p class="credits">
+          Image credits:
+          <a
+            href="https://unsplash.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Unsplash</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+  </body>
+</html>
